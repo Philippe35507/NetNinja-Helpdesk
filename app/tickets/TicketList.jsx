@@ -11,7 +11,7 @@ export default async function TicketList() {
       {tickets.map((ticket) => (
         <div key={ticket.id} className="card my-5">
           <h3>{ticket.title}</h3>
-          <p>{ticket.boby.slice(0, 200)}...</p>
+          <p>{ticket.body.slice(0, 200)}...</p>
           <div className={`pill ${ticket.priority}`}>
             {ticket.priority} priority
           </div>
