@@ -15,7 +15,7 @@ export async function addTicket(formData) {
   } = await supabase.auth.getSession();
 
   const { error } = await supabase
-    .from("Ticketsssssss")
+    .from("Tickets")
     .insert({ ...ticket, user_email: session.user.email });
 
   if (error) {
