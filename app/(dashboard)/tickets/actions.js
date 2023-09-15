@@ -15,8 +15,12 @@ export async function addTicket(formData) {
   } = await supabase.auth.getSession();
 
   const { error } = await supabase
-    .from("Tickets")
+    .from("Ticketsssssss")
     .insert({ ...ticket, user_email: session.user.email });
+
+  if (error) {
+    throw new Error("Could not add the new ticket.");
+  }
 
   revalidatePath("/tickets");
   redirect("/tickets");
